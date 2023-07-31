@@ -1,5 +1,3 @@
-from fuzzywuzzy import fuzz
-import re
 from ttsp import TextToSpeechPrinter
 from stti import SpeechToTextInputer
 import os
@@ -30,43 +28,8 @@ class ChatBot:
         response = Bard().get_answer(user_input)['content']
         for i in bad_chars:
             response = response.replace(i, '')
-       
-   
         return response
-        # fuzzy_match_threshold = 70 # can change this if needed
-
-        # # Define our input phrases with their answers
-        # predefined_inputs = [
-        #     "Hello":f"Hi {self.user_name}!",
-        #     "How are you?":"I'm am super awesome. Thanks for asking!",
-        #     "Who are you?":f"I'm a chatbot my name is {self.name}",
-        #     "How do you convince people?": "I'm gonna make them an offer they can't refuse",
-        #     "What is your favorite food":"Oranges and olive oil",
-        #     "What is the answer to Life Universe and Everything":"42",
-        # ]
-
-        # # Tokenize the user input
-        # user_input_tokens = re.findall(r'\w+',user_input.lower())
-
-        # best_match = None
-        # best_match_ratio = 0
-
-        # for input_phrase in predefined_inputs:
-        #     #tokenize the predefined input keys
-        #     input_phrase_tokens =  re.findall(r'\w+',input_phrase.lower())
-            
-        #     match_ratio = fuzz.partial_ratio(user_input_tokens, input_phrase_tokens)
-
-        #     if match_ratio > best_match_ratio:
-        #         best_match = input_phrase
-        #         best_match_ratio = match_ratio
-        #     print(best_match)
         
-        #  # Gerenate our Response based on the best match
-        # if best_match and best_match_ratio >=fuzzy_match_threshold:
-        #     return predefined_inputs[best_match]
-        # else:
-        #     return "English? Do you speak it?"
         
     def start_chat(self):
         print(f"Welcome! I'm {self.name}")
