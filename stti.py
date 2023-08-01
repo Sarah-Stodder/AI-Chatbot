@@ -13,7 +13,7 @@ class SpeechToTextInputer:
         while True:
             with sr.Microphone() as source:
                 play_sound()
-                audio = self.r.record(source, 3)
+                audio = self.r.record(source, 4)
             try:
                 text = self.r.recognize_google(audio)
                 if text:
