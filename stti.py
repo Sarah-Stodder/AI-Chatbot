@@ -14,6 +14,7 @@ class SpeechToTextInputer:
             with sr.Microphone() as source:
                 play_sound()
                 audio = self.r.record(source, 4)
+                print('\a')
             try:
                 text = self.r.recognize_google(audio)
                 if text:

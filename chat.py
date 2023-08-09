@@ -10,16 +10,18 @@ import requests
 
 
 load_dotenv()
-os.environ.get('_BARD_API_KEY')
+
 token = os.environ.get('COOKIE_1')
 cookie2 = os.environ.get('COOKIE_2')
 cookie3 = os.environ.get('COOKIE_3')
+
 
 session = requests.Session()
 session.headers = SESSION_HEADERS
 session.cookies.set("__Secure-1PSID", token)
 session.cookies.set("__Secure-1PSIDTS", cookie2)
 session.cookies.set("__Secure-1PSIDCC", cookie3)
+
 
 bard = Bard(token=token, session=session)
 class ChatBot:
@@ -61,4 +63,3 @@ class ChatBot:
 with TextToSpeechPrinter(), SpeechToTextInputer():
     chatbot = ChatBot()
     chatbot.start_chat()
-

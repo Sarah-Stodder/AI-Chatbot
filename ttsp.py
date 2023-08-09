@@ -7,6 +7,7 @@ class TextToSpeechPrinter:
     def __init__(self):
         self.engine = pyttsx3.init()
     
+    
     def __enter__(self):
         # save our print function
         self.original_print = print
@@ -30,3 +31,5 @@ class TextToSpeechPrinter:
     def __exit__(self, exc_type, exc_value, traceback):
         # Restore the og print to the stdout
         sys.stdout.write = self.original_print
+
+
