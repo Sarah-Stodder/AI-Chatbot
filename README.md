@@ -2,7 +2,9 @@
 #### To Download
 <p>In your CLI navigate to a parent folder to download the Repo into</p>
 type: 
-```git clone https://github.com/Sarah-Stodder/AI-Chatbot```
+```
+git clone https://github.com/Sarah-Stodder/AI-Chatbot
+```
 
 #### To Install
 In your CLI (in the parent folder where you did the clone) cd into the directory you cloned `cd AI-Chatbot`
